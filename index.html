@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="29 razones para celebrar tu vida: una carta digital de cumpleaños para Nathaly.">
+  <meta name="theme-color" content="#E9E7DD">
+  <meta property="og:title" content="29 razones para celebrar tu vida">
+  <meta property="og:description" content="Una pequeña sorpresa para celebrar tus 29 años.">
+  <title>29 razones para celebrar tu vida</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<!--CUERPO-->
+<div class="app" id="app">
+  <div class="fondo" aria-hidden="true"></div>
+
+  <header class="barra">
+    <button class="btn-icono" id="btn-volver" type="button" aria-label="Escena anterior" disabled>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <nav class="puntos" id="puntos" aria-label="Escenas"></nav>
+    <button class="btn-icono" id="btn-musica" type="button" aria-label="Reproducir música" aria-pressed="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 17V6l10-2v11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="15" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span class="ondas" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <main class="escenario" id="escenario">
+
+    <!-- ESCENA 01 · EL SOBRE -->
+    <section class="escena activa" id="escena-0" data-nombre="El sobre" aria-labelledby="t-sobre">
+      <div class="contenido centrado">
+        <p class="eyebrow">Para</p>
+        <h1 class="nombre-portada" id="t-sobre">Nathaly</h1>
+
+        <button class="sobre" id="sobre" type="button" aria-label="Abrir el sobre">
+          <span class="sobre-fondo"></span>
+          <span class="sobre-carta" aria-hidden="true">
+            <span class="sobre-carta-num">29</span>
+            <span class="sobre-carta-txt">razones</span>
+          </span>
+          <span class="sobre-bolsillo"></span>
+          <span class="sobre-solapa"></span>
+          <span class="sello" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 20.5s-7.6-4.5-9.3-9C1.6 8.4 3.6 5 7 5c2.1 0 3.8 1.2 5 3 1.2-1.8 2.9-3 5-3 3.4 0 5.4 3.4 4.3 6.5-1.7 4.5-9.3 9-9.3 9z" fill="currentColor"/></svg>
+          </span>
+        </button>
+
+        <p class="frase-sobre" id="frase-sobre"></p>
+        <button class="btn-principal pulso" id="btn-abrir" type="button"></button>
+      </div>
+    </section>
+
+    <!-- ESCENA 02 · LA CARTA -->
+    <section class="escena" id="escena-1" data-nombre="La carta" aria-labelledby="t-carta" hidden>
+      <div class="contenido">
+        <article class="papel" id="carta">
+          <svg class="ramita ramita-sup" viewBox="0 0 120 60" aria-hidden="true"><use href="#ramita"/></svg>
+          <h2 class="saludo manuscrito revela" id="t-carta"></h2>
+          <div id="carta-parrafos"></div>
+        </article>
+        <div class="acciones">
+          <button class="btn-principal" type="button" data-ir="2" id="btn-descubrir"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 03 · LAS 29 RAZONES -->
+    <section class="escena" id="escena-2" data-nombre="Las 29 razones" aria-labelledby="t-razones" hidden>
+      <div class="contenido ancho">
+        <header class="cabecera">
+          <h2 class="titulo" id="t-razones"></h2>
+          <p class="subtitulo" id="subtitulo-razones"></p>
+        </header>
+
+        <div class="progreso">
+          <div class="progreso-cifra" aria-hidden="true"><span id="progreso-num">00</span><span class="progreso-total">/29</span></div>
+          <div class="progreso-barra" role="progressbar" aria-label="Razones descubiertas" aria-valuemin="0" aria-valuemax="29" aria-valuenow="0" id="progreso-barra">
+            <div class="progreso-relleno" id="progreso-relleno"></div>
+          </div>
+          <p class="progreso-texto" id="progreso-texto" aria-live="polite">Ninguna descubierta todavía</p>
+        </div>
+
+        <ul class="rejilla" id="rejilla" aria-label="Tarjetas de razones"></ul>
+
+        <p class="mensaje-completo" id="mensaje-completo" hidden></p>
+
+        <div class="acciones">
+          <button class="btn-principal" type="button" data-ir="3" id="btn-pastel">Continuar al deseo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 04 · UN DESEO -->
+    <section class="escena" id="escena-3" data-nombre="Un deseo" aria-labelledby="t-pastel" hidden>
+      <div class="contenido centrado">
+        <header class="cabecera">
+          <h2 class="titulo" id="t-pastel"></h2>
+          <p class="subtitulo" id="subtitulo-pastel"></p>
+        </header>
+        <div class="pastel-wrap">
+          <svg id="pastel" class="pastel" viewBox="0 62 320 226" role="img" aria-label="Pastel de cumpleaños con 29 velas"></svg>
+        </div>
+        <p class="mensaje-deseo" id="mensaje-deseo" aria-live="polite"></p>
+        <div class="acciones">
+          <button class="btn-principal" type="button" id="btn-velas"></button>
+          <button class="btn-principal" type="button" data-ir="4" id="btn-final" hidden>Leer el último mensaje</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 05 · MENSAJE FINAL -->
+    <section class="escena" id="escena-4" data-nombre="El mensaje final" aria-labelledby="t-final" hidden>
+      <div class="contenido">
+        <article class="papel papel-final" id="carta-final">
+          <svg class="ramita ramita-sup" viewBox="0 0 120 60" aria-hidden="true"><use href="#ramita"/></svg>
+          <h2 class="oculto" id="t-final">El mensaje final</h2>
+          <div id="final-parrafos"></div>
+          <p class="felicidades manuscrito revela" id="felicidades"></p>
+          <p class="firma revela" id="firma"></p>
+        </article>
+        <div class="acciones">
+          <button class="btn-secundario" type="button" id="btn-reiniciar">Volver a empezar</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Visor de una razón -->
+  <div class="visor" id="visor" hidden>
+    <div class="visor-velo" data-cerrar></div>
+    <div class="visor-tarjeta" id="visor-tarjeta" role="dialog" aria-modal="true" aria-labelledby="visor-titulo" aria-describedby="visor-texto" tabindex="-1">
+      <button class="visor-x" type="button" data-cerrar aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <p class="visor-numero" id="visor-numero"></p>
+      <svg class="visor-motivo" id="visor-motivo" viewBox="0 0 48 48" aria-hidden="true"></svg>
+      <h3 class="visor-titulo" id="visor-titulo"></h3>
+      <p class="visor-texto" id="visor-texto"></p>
+      <div class="visor-nav">
+        <button class="btn-redondo" type="button" id="visor-prev" aria-label="Razón anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="visor-pos" id="visor-pos"></span>
+        <button class="btn-redondo" type="button" id="visor-next" aria-label="Razón siguiente">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="particulas" id="particulas" aria-hidden="true"></div>
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+</div>
+
+<!-- Ilustración reutilizable: ramita botánica -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ramita" viewBox="0 0 120 60">
+      <path d="M6 54C34 46 64 30 112 8" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M30 45c-2-8 2-15 9-17-1 8-4 13-9 17zM30 45c7 1 13-2 16-8-8-1-13 2-16 8z" fill="currentColor" opacity=".55"/>
+      <path d="M58 32c-1-8 4-14 11-15-2 8-6 12-11 15zM58 32c7 2 13 0 17-6-8-2-13 1-17 6z" fill="currentColor" opacity=".55"/>
+      <path d="M86 20c0-7 5-12 11-12-2 7-6 10-11 12zM86 20c6 2 11 0 15-5-7-2-11 0-15 5z" fill="currentColor" opacity=".55"/>
+      <circle cx="112" cy="8" r="3.2" fill="currentColor"/>
+      <circle cx="18" cy="50" r="2" fill="currentColor" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+<!--/CUERPO-->
+
+<script src="js/datos.js"></script>
+<script src="js/musica.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
